@@ -1,0 +1,9 @@
+{
+  "locale": "cs-CZ",
+  "translations": {
+    "app.title": "Mají Otevřeno?",
+    "app.subtitle": "Zjistěte, zda jsou obchody otevřené o svátcích",
+    "test.date": "Dnes je {$INTERPOLATION}",
+    "test.time": "Aktuální čas: {$INTERPOLATION}"
+  }
+}
