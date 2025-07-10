@@ -5,8 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class TimeService {
   
-  dateToISOString(date: Date): string {
-    return date.toISOString().split('T')[0];
+  dateToLocalString(date: Date): string {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
   }
 
   dateToTimestamp(date: Date): number {
@@ -15,7 +18,9 @@ export class TimeService {
   }
 
   stringToTimestamp(dateString: string): number {
-    return new Date(dateString).getTime();
+    const [year, month, day] = dateString.split('-').map(Number);
+    const dateOnly = new Date(year, month - 1, day);
+    return dateOnly.getTime();
   }
 
   getCurrentDate(): Date {
@@ -23,6 +28,6 @@ export class TimeService {
   }
 
   getCurrentDateString(): string {
-    return this.dateToISOString(this.getCurrentDate());
+    return this.dateToLocalString(this.getCurrentDate());
   }
 }

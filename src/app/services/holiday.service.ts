@@ -35,12 +35,12 @@ export class HolidayService {
   }
 
   getHolidayByDate(date: Date): Holiday | undefined {
-    const dateString = this.timeService.dateToISOString(date);
+    const dateString = this.timeService.dateToLocalString(date);
     return this.czechHolidays.find(h => h.date === dateString);
   }
 
   isHoliday(date: Date): boolean {
-    const dateString = this.timeService.dateToISOString(date);
+    const dateString = this.timeService.dateToLocalString(date);
     return this.czechHolidays.some(h => h.date === dateString);
   }
 

@@ -121,6 +121,12 @@
             font-weight: bold;
           }
 
+          &.holiday.inactive {
+            background: #95a5a6;
+            color: #ecf0f1;
+            font-weight: bold;
+          }
+
           &.today {
             border: 2px solid #3498db;
             font-weight: bold;
