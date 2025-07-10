@@ -1,0 +1,39 @@
+<div class="calendar-screen">
+  <div class="app-header">
+    <div class="app-title" i18n="@@app.title">Mají Otevřeno?</div>
+    <div class="app-subtitle" i18n="@@calendar.subtitle">Kalendář státních svátků</div>
+  </div>
+  
+  <div class="calendar-content">
+    <div class="month-selector">
+      <button class="month-btn" (click)="previousMonth()" aria-label="Předchozí měsíc">‹</button>
+      <div class="month-title">{{ currentMonthName }}</div>
+      <button class="month-btn" (click)="nextMonth()" aria-label="Následující měsíc">›</button>
+    </div>
+    
+    <div class="calendar-grid">
+      <div class="calendar-header">
+        <div class="day-header" *ngFor="let dayHeader of dayHeaders">{{ dayHeader }}</div>
+      </div>
+      
+      <div class="calendar-days">
+        <div class="day-cell" 
+             *ngFor="let day of calendarDays"
+             [class.inactive]="!day.isCurrentMonth"
+             [class.holiday]="day.isHoliday"
+             [class.today]="day.isToday"
+             [title]="day.holidayName || ''">
+          {{ day.dayNumber }}
+        </div>
+      </div>
+    </div>
+    
+    <div class="upcoming-holidays">
+      <div class="holidays-title" i18n="@@calendar.upcoming.title">Nadcházející svátky:</div>
+      <div class="holiday-item" *ngFor="let holiday of upcomingHolidays">
+        <div class="holiday-date">{{ formatHolidayDate(holiday.date) }}</div>
+        <div class="holiday-name-cal">{{ holiday.name }}</div>
+      </div>
+    </div>
+  </div>
+</div>

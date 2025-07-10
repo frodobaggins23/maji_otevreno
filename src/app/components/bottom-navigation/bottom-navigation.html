@@ -1,0 +1,14 @@
+<div class="bottom-nav">
+  <div class="nav-item" 
+       [class.active]="currentScreen === 'today'" 
+       (click)="onScreenSelect('today')">
+    <div class="nav-icon">📅</div>
+    <span i18n="@@nav.today">Dnes</span>
+  </div>
+  <div class="nav-item" 
+       [class.active]="currentScreen === 'calendar'" 
+       (click)="onScreenSelect('calendar')">
+    <div class="nav-icon">🗓️</div>
+    <span i18n="@@nav.calendar">Kalendář</span>
+  </div>
+</div>

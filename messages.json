@@ -1,7 +1,11 @@
 {
   "locale": "en-US",
   "translations": {
+    "nav.today": "Dnes",
+    "nav.calendar": "Kalendář",
     "app.title": "Mají Otevřeno?",
+    "calendar.subtitle": "Kalendář státních svátků",
+    "calendar.upcoming.title": "Nadcházející svátky:",
     "shops.status.title": "Stav obchodů dnes:",
     "status.closed": "ZAVŘENO",
     "status.open": "OTEVŘENO",

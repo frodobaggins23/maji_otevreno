@@ -1,3 +1,11 @@
-<app-today-screen></app-today-screen>
+<div class="app-container">
+  <app-today-screen *ngIf="currentScreen === 'today'"></app-today-screen>
+  <app-calendar-screen *ngIf="currentScreen === 'calendar'"></app-calendar-screen>
+  
+  <app-bottom-navigation 
+    [currentScreen]="currentScreen" 
+    (screenChange)="onScreenChange($event)">
+  </app-bottom-navigation>
+</div>
 
 <router-outlet />
