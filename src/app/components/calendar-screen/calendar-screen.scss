@@ -197,4 +197,42 @@
       }
     }
   }
+
+  @media (min-width: 768px) {
+    .calendar-content {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px 20px;
+
+      .calendar-grid {
+        max-width: 400px;
+        margin: 0 auto 20px;
+
+        .calendar-days .day-cell {
+          font-size: 16px;
+          min-height: 45px;
+        }
+      }
+
+      .upcoming-holidays {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .calendar-content {
+      max-width: 600px;
+      padding: 40px 30px;
+
+      .calendar-grid {
+        max-width: 450px;
+      }
+
+      .upcoming-holidays {
+        max-width: 450px;
+      }
+    }
+  }
 }

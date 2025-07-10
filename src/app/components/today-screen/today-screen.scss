@@ -82,7 +82,9 @@
 
     .shops-section {
       margin-top: var(--spacing-3xl);
-      text-align: left;
+      text-align: center;
+      max-width: 400px;
+      margin: var(--spacing-3xl) auto 0;
 
       .shops-title {
         font-size: var(--font-size-base);
@@ -94,9 +96,11 @@
       .shop-item {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         padding: var(--spacing-md) 0;
         border-bottom: 1px solid var(--color-gray-100);
-        transition: background-color var(--transition-fast);
+        transition: all var(--transition-fast);
+        text-align: left;
 
         &:hover {
           background-color: rgba(255, 255, 255, 0.5);
@@ -147,6 +151,44 @@
       
       .status-text {
         font-size: var(--font-size-2xl);
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .main-content {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 40px 30px;
+
+      .shops-section {
+        .shop-item {
+          max-width: 350px;
+          margin: 0 auto;
+          padding: var(--spacing-md) var(--spacing-lg);
+          border-radius: var(--radius-sm);
+          
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .main-content {
+      max-width: 600px;
+      padding: 50px 40px;
+
+      .shops-section {
+        max-width: 450px;
+        
+        .shop-item {
+          max-width: 400px;
+        }
       }
     }
   }
