@@ -1,9 +1,11 @@
 {
-  "locale": "cs-CZ",
+  "locale": "en-US",
   "translations": {
     "app.title": "Mají Otevřeno?",
-    "app.subtitle": "Zjistěte, zda jsou obchody otevřené o svátcích",
-    "test.date": "Dnes je {$INTERPOLATION}",
-    "test.time": "Aktuální čas: {$INTERPOLATION}"
+    "shops.status.title": "Stav obchodů dnes:",
+    "status.closed": "ZAVŘENO",
+    "status.open": "OTEVŘENO",
+    "status.closed.description": "Dnes jsou obchody zavřené",
+    "status.open.description": "Dnes mají obchody otevřeno"
   }
 }
