@@ -6,25 +6,25 @@
 
   .app-header {
     background: var(--color-primary);
-    color: white;
-    padding: 20px;
+    color: var(--color-white);
+    padding: var(--spacing-xl);
     text-align: center;
 
     .app-title {
-      font-size: 24px;
+      font-size: var(--font-size-2xl);
       font-weight: 700;
-      margin-bottom: 5px;
+      margin-bottom: var(--spacing-xs);
     }
 
     .app-subtitle {
-      font-size: 14px;
+      font-size: var(--font-size-sm);
       opacity: 0.8;
     }
   }
 
   .calendar-content {
     flex: 1;
-    padding: 20px;
+    padding: var(--spacing-xl);
     display: flex;
     flex-direction: column;
 
@@ -32,17 +32,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: var(--spacing-xl);
       padding: 0 10px;
 
       .month-btn {
         background: var(--color-secondary);
-        color: white;
+        color: var(--color-white);
         border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        font-size: 18px;
+        width: var(--spacing-4xl);
+        height: var(--spacing-4xl);
+        border-radius: var(--radius-full);
+        font-size: var(--font-size-lg);
         font-weight: bold;
         cursor: pointer;
         display: flex;
@@ -60,7 +60,7 @@
       }
 
       .month-title {
-        font-size: 20px;
+        font-size: var(--font-size-xl);
         font-weight: 600;
         color: var(--color-primary);
         text-align: center;
@@ -70,30 +70,30 @@
 
     .calendar-grid {
       background: var(--color-white);
-      border-radius: 10px;
-      padding: 15px;
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
       box-shadow: var(--shadow-sm);
-      margin-bottom: 20px;
+      margin-bottom: var(--spacing-xl);
 
       .calendar-header {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        gap: 5px;
-        margin-bottom: 10px;
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-md);
 
         .day-header {
           text-align: center;
           font-weight: 600;
           color: var(--color-gray-500);
-          padding: 10px 0;
-          font-size: 12px;
+          padding: var(--spacing-md) 0;
+          font-size: var(--font-size-xs);
         }
       }
 
       .calendar-days {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        gap: 5px;
+        gap: var(--spacing-xs);
 
         .day-cell {
           aspect-ratio: 1;
@@ -101,8 +101,8 @@
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          border-radius: 5px;
-          font-size: 14px;
+          border-radius: var(--radius-sm);
+          font-size: var(--font-size-sm);
           font-weight: 500;
           color: var(--color-primary);
           transition: background-color 0.2s;
@@ -117,13 +117,13 @@
 
           &.holiday-shops-closed {
             background: var(--color-danger);
-            color: white;
+            color: var(--color-white);
             font-weight: bold;
           }
 
           &.holiday-shops-open {
             background: var(--color-success);
-            color: white;
+            color: var(--color-white);
             font-weight: bold;
           }
 
@@ -153,16 +153,16 @@
 
     .upcoming-holidays {
       background: var(--color-white);
-      border-radius: 10px;
-      padding: 15px;
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
       box-shadow: var(--shadow-sm);
       flex: 1;
       overflow-y: auto;
 
       .holidays-title {
-        font-size: 16px;
+        font-size: var(--font-size-base);
         font-weight: 600;
-        margin-bottom: 15px;
+        margin-bottom: var(--spacing-lg);
         color: var(--color-primary);
       }
 
@@ -178,17 +178,17 @@
         }
 
         .holiday-date {
-          font-size: 14px;
+          font-size: var(--font-size-sm);
           color: var(--color-danger);
           font-weight: 600;
-          min-width: 50px;
+          min-width: var(--spacing-5xl);
         }
 
         .holiday-name-cal {
-          font-size: 14px;
+          font-size: var(--font-size-sm);
           color: var(--color-primary);
           flex: 1;
-          margin-left: 15px;
+          margin-left: var(--spacing-lg);
         }
       }
     }
@@ -197,13 +197,13 @@
   // Responsive adjustments
   @media (max-width: 375px) {
     .calendar-content {
-      padding: 15px;
+      padding: var(--spacing-lg);
 
       .calendar-grid {
-        padding: 10px;
+        padding: var(--spacing-md);
 
         .calendar-days .day-cell {
-          font-size: 12px;
+          font-size: var(--font-size-xs);
         }
       }
     }
@@ -213,15 +213,15 @@
     .calendar-content {
       max-width: 500px;
       margin: 0 auto;
-      padding: 30px 20px;
+      padding: var(--spacing-3xl) var(--spacing-xl);
 
       .calendar-grid {
         max-width: 400px;
-        margin: 0 auto 20px;
+        margin: 0 auto var(--spacing-xl);
 
         .calendar-days .day-cell {
-          font-size: 16px;
-          min-height: 45px;
+          font-size: var(--font-size-base);
+          min-height: var(--spacing-5xl);
         }
       }
 
@@ -235,7 +235,7 @@
   @media (min-width: 1024px) {
     .calendar-content {
       max-width: 600px;
-      padding: 40px 30px;
+      padding: var(--spacing-4xl) var(--spacing-3xl);
 
       .calendar-grid {
         max-width: 450px;

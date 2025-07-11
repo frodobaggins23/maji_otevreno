@@ -103,7 +103,7 @@
         text-align: left;
 
         &:hover {
-          background-color: rgba(255, 255, 255, 0.5);
+          background-color: var(--color-gray-100);
           border-radius: var(--radius-sm);
           padding-left: var(--spacing-sm);
           padding-right: var(--spacing-sm);
@@ -146,7 +146,7 @@
       .status-indicator {
         width: 100px;
         height: 100px;
-        font-size: 36px;
+        font-size: var(--font-size-3xl);
       }
       
       .status-text {
@@ -159,7 +159,7 @@
     .main-content {
       max-width: 500px;
       margin: 0 auto;
-      padding: 40px 30px;
+      padding: var(--spacing-4xl) var(--spacing-3xl);
 
       .shops-section {
         .shop-item {
@@ -169,9 +169,9 @@
           border-radius: var(--radius-sm);
           
           &:hover {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: var(--color-white);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-sm);
           }
         }
       }
@@ -181,7 +181,7 @@
   @media (min-width: 1024px) {
     .main-content {
       max-width: 600px;
-      padding: 50px 40px;
+      padding: var(--spacing-5xl) var(--spacing-4xl);
 
       .shops-section {
         max-width: 450px;
