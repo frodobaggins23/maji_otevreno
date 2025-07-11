@@ -54,22 +54,36 @@ export class TodayScreen implements OnInit {
   }
 
   getStatusText(): string {
-    return this.todayStatus.isHoliday ? $localize`:@@status.closed:ZAVŘENO` : $localize`:@@status.open:OTEVŘENO`;
+    if (this.todayStatus.isHoliday && this.todayStatus.shopsClosed) {
+      return $localize`:@@status.closed:ZAVŘENO`;
+    } else {
+      return $localize`:@@status.open:OTEVŘENO`;
+    }
   }
 
   getStatusIcon(): string {
-    return this.todayStatus.isHoliday ? '✕' : '✓';
+    if (this.todayStatus.isHoliday && this.todayStatus.shopsClosed) {
+      return '✕';
+    } else {
+      return '✓';
+    }
   }
 
   getStatusDescription(): string {
-    return this.todayStatus.isHoliday ? 
-      $localize`:@@status.closed.description:Dnes jsou obchody zavřené` : 
-      $localize`:@@status.open.description:Dnes mají obchody otevřeno`;
+    if (this.todayStatus.isHoliday && this.todayStatus.shopsClosed) {
+      return $localize`:@@status.closed.description:Dnes jsou obchody zavřené`;
+    } else {
+      return $localize`:@@status.open.description:Dnes mají obchody otevřeno`;
+    }
   }
 
   getShopsByStatus(isOpen: boolean): ShopCategory[] {
-    return this.shopCategories.filter(shop => 
-      this.todayStatus.isHoliday ? shop.isOpenOnHolidays === isOpen : isOpen
-    );
+    return this.shopCategories.filter(shop => {
+      if (this.todayStatus.isHoliday && this.todayStatus.shopsClosed) {
+        return shop.isOpenOnHolidays === isOpen;
+      } else {
+        return isOpen;
+      }
+    });
   }
 }

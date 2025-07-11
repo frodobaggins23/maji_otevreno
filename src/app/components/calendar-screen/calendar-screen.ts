@@ -19,6 +19,7 @@ interface CalendarDay {
   isToday: boolean;
   isHoliday: boolean;
   holidayName?: string;
+  shopsClosed?: boolean;
 }
 
 @Component({
@@ -98,7 +99,8 @@ export class CalendarScreen implements OnInit {
         isCurrentMonth: isCurrentMonth,
         isToday: isToday,
         isHoliday: !!holiday,
-        holidayName: holiday?.name
+        holidayName: holiday?.name,
+        shopsClosed: holiday?.shopsClosed
       });
     }
   }

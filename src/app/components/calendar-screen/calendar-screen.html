@@ -21,6 +21,8 @@
              *ngFor="let day of calendarDays"
              [class.inactive]="!day.isCurrentMonth"
              [class.holiday]="day.isHoliday"
+             [class.holiday-shops-closed]="day.isHoliday && day.shopsClosed"
+             [class.holiday-shops-open]="day.isHoliday && !day.shopsClosed"
              [class.today]="day.isToday"
              [title]="day.holidayName || ''">
           {{ day.dayNumber }}
