@@ -74,6 +74,8 @@
       padding: var(--spacing-lg);
       box-shadow: var(--shadow-sm);
       margin-bottom: var(--spacing-xl);
+      margin-left: auto;
+      margin-right: auto;
 
       .calendar-header {
         display: grid;
@@ -195,15 +197,46 @@
   }
 
   // Responsive adjustments
-  @media (max-width: 375px) {
+  @media (max-width: 480px) {
     .calendar-content {
-      padding: var(--spacing-lg);
+      padding: var(--spacing-xs);
 
       .calendar-grid {
         padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+        margin-left: auto;
+        margin-right: auto;
+
+        .calendar-header, .calendar-days {
+          gap: 2px;
+        }
 
         .calendar-days .day-cell {
           font-size: var(--font-size-xs);
+          min-height: var(--spacing-xl);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    .calendar-content {
+      padding: var(--spacing-xs);
+
+      .calendar-grid {
+        padding: var(--spacing-sm);
+        border-radius: var(--radius-sm);
+        margin-left: auto;
+        margin-right: auto;
+
+        .calendar-header, .calendar-days {
+          gap: 1px;
+        }
+
+        .calendar-days .day-cell {
+          font-size: 10px;
+          min-height: var(--spacing-lg);
+          border-radius: 2px;
         }
       }
     }
