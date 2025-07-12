@@ -1,59 +1,85 @@
-# App
+# Mají Otevřeno? 🇨🇿
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+A Czech mobile web application that helps users determine if shops are open on public holidays.
 
-## Development server
+## Overview
 
-To start a local development server, run:
+**Mají Otevřeno?** (Are They Open?) provides real-time information about Czech public holidays and their impact on shop opening hours. The app features a clean, mobile-first interface with two main screens:
+
+- **Today Screen**: Current day holiday status with visual indicators
+- **Calendar Screen**: Interactive calendar showing all Czech public holidays
+
+## Features
+
+- ✅ Real-time holiday detection for current date
+- 📅 Interactive calendar with holiday highlighting  
+- 🏪 Shop category status (supermarkets, pharmacies, gas stations, etc.)
+- 🔄 Dynamic Easter calculation using Jean Meeus algorithm
+- 📱 Mobile-optimized responsive design
+- 🌐 Complete Czech localization
+- ⚡ Fast performance with localStorage caching
+- 🔍 SEO optimized with structured data
+
+## Technology Stack
+
+- **Angular 20** with standalone components
+- **TypeScript 5.8** with strict mode
+- **SCSS** for styling with CSS custom properties
+- **PWA** capabilities with web manifest
+- **Karma + Jasmine** for testing
+
+## Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+# or
 ng serve
+
+# Build for production
+npm run build
+
+# Run tests
+npm test
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Architecture
 
-## Code scaffolding
+### Core Services
+- **HolidayService**: Main holiday operations interface
+- **HolidayGeneratorService**: Dynamic holiday generation for any year
+- **EasterCalculatorService**: Astronomical Easter calculation (Jean Meeus algorithm)
+- **MetaService**: Dynamic page title and meta tag management
+- **TimeService**: Date/time utilities and Czech formatting
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Data Models
+- Complete Czech public holiday coverage (13 holidays including Easter)
+- Shop categories with holiday behavior rules
+- Timezone-safe date handling
 
-```bash
-ng generate component component-name
-```
+## Development Story
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+This application was created as a demonstration of [Claude Code](https://claude.ai/code) capabilities. The entire project - from initial idea to production-ready application - was developed through collaborative sessions with Claude Code in **less than 8 hours** total development time.
 
-```bash
-ng generate --help
-```
+### Time Breakdown
+- **Session 1** (70 min): Initial setup, wireframing, Angular scaffolding
+- **Session 2** (60 min): Core services and data models
+- **Session 3** (60 min): UI components and navigation
+- **Session 4** (70 min): Styling and time handling
+- **Session 5** (60 min): Holiday logic refinements
+- **Session 6** (60 min): Easter calculation and testing
+- **Session 7** (60 min): SEO optimizations
 
-## Building
+## Deployment
 
-To build the project run:
+The app is designed for deployment as a static site with the following requirements:
+- Serve `index.html` for all routes (SPA routing)
+- Ensure `robots.txt` and `sitemap.xml` are accessible
+- Configure proper MIME types for assets
 
-```bash
-ng build
-```
+## License
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is open source and available under the MIT License.
