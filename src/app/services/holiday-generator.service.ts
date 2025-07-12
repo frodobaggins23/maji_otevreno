@@ -17,14 +17,14 @@ export class HolidayGeneratorService {
   
   private fixedHolidays: FixedHoliday[] = [
     { month: 1, day: 1, name: 'Nový rok', shopsClosed: true },
-    { month: 5, day: 1, name: 'Svátek práce', shopsClosed: true },
-    { month: 5, day: 8, name: 'Den vítězství', shopsClosed: false },
+    { month: 5, day: 1, name: 'Svátek práce', shopsClosed: false },
+    { month: 5, day: 8, name: 'Den vítězství', shopsClosed: true },
     { month: 7, day: 5, name: 'Den slovanských věrozvěstů Cyrila a Metoděje', shopsClosed: false },
     { month: 7, day: 6, name: 'Den upálení mistra Jana Husa', shopsClosed: false },
-    { month: 9, day: 28, name: 'Den české státnosti', shopsClosed: false },
-    { month: 10, day: 28, name: 'Den vzniku samostatného československého státu', shopsClosed: false },
+    { month: 9, day: 28, name: 'Den české státnosti', shopsClosed: true },
+    { month: 10, day: 28, name: 'Den vzniku samostatného československého státu', shopsClosed: true },
     { month: 11, day: 17, name: 'Den boje za svobodu a demokracii', shopsClosed: false },
-    { month: 12, day: 24, name: 'Štědrý den', shopsClosed: true },
+    { month: 12, day: 24, name: 'Štědrý den', shopsClosed: false },
     { month: 12, day: 25, name: '1. svátek vánoční', shopsClosed: true },
     { month: 12, day: 26, name: '2. svátek vánoční', shopsClosed: true }
   ];
