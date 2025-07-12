@@ -1,11 +1,91 @@
 <!doctype html>
-<html lang="en">
+<html lang="cs">
 <head>
   <meta charset="utf-8">
-  <title>App</title>
+  <title>Mají Otevřeno? - Zjistěte, zda mají obchody otevřeno o svátcích</title>
+  <meta name="description" content="Zjistěte rychle a jednoduše, zda mají obchody otevřeno o českých svátcích. Přehledný kalendář s informacemi o všech státních svátcích a otevírací době obchodů.">
+  <meta name="keywords" content="svátky, otevírací doba, obchody, Česká republika, státní svátky, kalendář svátků">
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="canonical" href="https://majiotevreno.cz/">
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Open Graph meta tags for social sharing -->
+  <meta property="og:title" content="Mají Otevřeno? - Zjistěte, zda mají obchody otevřeno o svátcích">
+  <meta property="og:description" content="Zjistěte rychle a jednoduše, zda mají obchody otevřeno o českých svátcích. Přehledný kalendář s informacemi o všech státních svátcích.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://majiotevreno.cz/">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="Mají Otevřeno?">
+  
+  <!-- Twitter Card meta tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mají Otevřeno? - Zjistěte, zda mají obchody otevřeno o svátcích">
+  <meta name="twitter:description" content="Zjistěte rychle a jednoduše, zda mají obchody otevřeno o českých svátcích. Přehledný kalendář s informacemi o všech státních svátcích.">
+  
+  <!-- Additional SEO meta tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Mají Otevřeno?">
+  <meta name="theme-color" content="#2c3e50">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mají Otevřeno?",
+    "alternateName": "Are They Open?",
+    "description": "Zjistěte rychle a jednoduše, zda mají obchody otevřeno o českých svátcích. Přehledný kalendář s informacemi o všech státních svátcích a otevírací době obchodů.",
+    "url": "https://majiotevreno.cz",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CZK"
+    },
+    "inLanguage": "cs",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://majiotevreno.cz/today",
+      "query-input": "required name=holiday_date"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "České státní svátky",
+        "description": "Informace o všech českých státních svátcích a jejich vlivu na otevírací dobu obchodů"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Otevírací doba obchodů",
+        "description": "Informace o tom, které obchody mají otevřeno během státních svátků v České republice"
+      }
+    ],
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Které obchody mají otevřeno o svátcích?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Většina supermarketů, čerpacích stanic a restaurací má otevřeno i o svátcích. Menší obchody a kanceláře jsou obvykle zavřené."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "Které jsou české státní svátky?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "České státní svátky zahrnují Nový rok, Velikonoce, Svátek práce, Den vítězství, Den slovanských věrozvěstů, Den upálení Jana Husa, Den české státnosti, Den vzniku Československa, Den boje za svobodu a demokracii a Vánoce."
+          }
+        }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
   <app-root></app-root>

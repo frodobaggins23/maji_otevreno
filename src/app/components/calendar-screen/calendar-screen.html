@@ -1,17 +1,17 @@
 <div class="calendar-screen">
-  <div class="app-header">
-    <div class="app-title" i18n="@@app.title">Mají Otevřeno?</div>
-    <div class="app-subtitle" i18n="@@calendar.subtitle">Kalendář státních svátků</div>
-  </div>
+  <header class="app-header">
+    <h1 class="app-title" i18n="@@app.title">Mají Otevřeno?</h1>
+    <p class="app-subtitle" i18n="@@calendar.subtitle">Kalendář státních svátků</p>
+  </header>
   
-  <div class="calendar-content">
-    <div class="month-selector">
+  <main class="calendar-content">
+    <section class="month-selector">
       <button class="month-btn" (click)="previousMonth()" aria-label="Předchozí měsíc">‹</button>
-      <div class="month-title">{{ currentMonthName }}</div>
+      <h2 class="month-title">{{ currentMonthName }}</h2>
       <button class="month-btn" (click)="nextMonth()" aria-label="Následující měsíc">›</button>
-    </div>
+    </section>
     
-    <div class="calendar-grid">
+    <section class="calendar-grid">
       <div class="calendar-header">
         <div class="day-header" *ngFor="let dayHeader of dayHeaders">{{ dayHeader }}</div>
       </div>
@@ -28,14 +28,16 @@
           {{ day.dayNumber }}
         </div>
       </div>
-    </div>
+    </section>
     
-    <div class="upcoming-holidays">
-      <div class="holidays-title" i18n="@@calendar.upcoming.title">Nadcházející svátky:</div>
-      <div class="holiday-item" *ngFor="let holiday of upcomingHolidays">
-        <div class="holiday-date">{{ formatHolidayDate(holiday.date) }}</div>
-        <div class="holiday-name-cal">{{ holiday.name }}</div>
-      </div>
-    </div>
-  </div>
+    <section class="upcoming-holidays">
+      <h3 class="holidays-title" i18n="@@calendar.upcoming.title">Nadcházející svátky:</h3>
+      <ul class="holiday-list">
+        <li class="holiday-item" *ngFor="let holiday of upcomingHolidays">
+          <span class="holiday-date">{{ formatHolidayDate(holiday.date) }}</span>
+          <span class="holiday-name-cal">{{ holiday.name }}</span>
+        </li>
+      </ul>
+    </section>
+  </main>
 </div>

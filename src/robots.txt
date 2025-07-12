@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Main sitemap location
+Sitemap: https://majiotevreno.cz/sitemap.xml
+
+# Allow search engines to crawl all pages
+Allow: /today
+Allow: /calendar
+
+# Block any admin or internal directories if they exist
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_/
+
+# Allow crawling of static assets
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.ico$
+
+# Crawl delay (optional, for being polite to search engines)
+Crawl-delay: 1

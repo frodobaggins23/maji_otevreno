@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HolidayService } from '../../services/holiday.service';
 import { TimeService } from '../../services/time.service';
+import { MetaService } from '../../services/meta.service';
 import { HolidayStatus } from '../../models/holiday.model';
 import { ShopCategory } from '../../models/shop.model';
 
@@ -35,12 +36,15 @@ export class TodayScreen implements OnInit {
 
   constructor(
     private holidayService: HolidayService,
-    private timeService: TimeService
+    private timeService: TimeService,
+    private metaService: MetaService
   ) {}
 
   ngOnInit(): void {
     this.todayStatus = this.holidayService.getTodayStatus();
     this.todayDateString = this.formatCurrentDate();
+    
+    this.metaService.setTodayPageTitle(this.todayStatus.holidayName);
   }
 
   private formatCurrentDate(): string {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HolidayService } from '../../services/holiday.service';
 import { TimeService } from '../../services/time.service';
+import { MetaService } from '../../services/meta.service';
 import { Holiday } from '../../models/holiday.model';
 
 // Constants for Czech month and day names
@@ -39,12 +40,14 @@ export class CalendarScreen implements OnInit {
 
   constructor(
     private holidayService: HolidayService,
-    private timeService: TimeService
+    private timeService: TimeService,
+    private metaService: MetaService
   ) {}
 
   ngOnInit(): void {
     this.generateCalendar();
     this.loadUpcomingHolidays();
+    this.updatePageTitle();
   }
 
   get currentMonthName(): string {
@@ -59,6 +62,7 @@ export class CalendarScreen implements OnInit {
       this.currentMonth--;
     }
     this.generateCalendar();
+    this.updatePageTitle();
   }
 
   nextMonth(): void {
@@ -69,6 +73,7 @@ export class CalendarScreen implements OnInit {
       this.currentMonth++;
     }
     this.generateCalendar();
+    this.updatePageTitle();
   }
 
   private generateCalendar(): void {
@@ -120,5 +125,9 @@ export class CalendarScreen implements OnInit {
     const day = date.getDate();
     const month = date.getMonth() + 1;
     return `${day}.${month}.`;
+  }
+
+  private updatePageTitle(): void {
+    this.metaService.setCalendarPageTitle(this.currentMonthName);
   }
 }

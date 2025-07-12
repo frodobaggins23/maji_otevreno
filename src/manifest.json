@@ -1,0 +1,49 @@
+{
+  "name": "Mají Otevřeno? - Státní svátky a otevírací doba obchodů",
+  "short_name": "Mají Otevřeno?",
+  "description": "Zjistěte, zda mají obchody otevřeno o českých státních svátcích. Přehledný kalendář svátků a aktuální informace o otevírací době.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#2c3e50",
+  "background_color": "#f5f5f5",
+  "lang": "cs",
+  "scope": "/",
+  "categories": ["business", "lifestyle", "utilities"],
+  "icons": [
+    {
+      "src": "/assets/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dnes",
+      "short_name": "Dnes",
+      "description": "Zkontrolujte, zda jsou dnes obchody otevřené",
+      "url": "/today",
+      "icons": [{ "src": "/assets/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Kalendář",
+      "short_name": "Kalendář",
+      "description": "Prohlédněte si kalendář státních svátků",
+      "url": "/calendar",
+      "icons": [{ "src": "/assets/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

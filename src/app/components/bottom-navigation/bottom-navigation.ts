@@ -1,19 +1,29 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 export type ScreenType = 'today' | 'calendar';
 
 @Component({
   selector: 'app-bottom-navigation',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './bottom-navigation.html',
   styleUrl: './bottom-navigation.scss'
 })
 export class BottomNavigation {
-  @Input() currentScreen: ScreenType = 'today';
-  @Output() screenChange = new EventEmitter<ScreenType>();
+  currentScreen: ScreenType = 'today';
+
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.currentScreen = event.url.includes('/calendar') ? 'calendar' : 'today';
+      });
+  }
 
   onScreenSelect(screen: ScreenType): void {
-    this.screenChange.emit(screen);
+    this.router.navigate([`/${screen}`]);
   }
 }

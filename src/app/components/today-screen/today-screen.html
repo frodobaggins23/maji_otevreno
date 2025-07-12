@@ -1,36 +1,40 @@
 <div class="today-screen">
-  <div class="app-header">
-    <div class="app-title" i18n="@@app.title">Mají Otevřeno?</div>
-    <div class="app-subtitle">{{ todayDateString }}</div>
-  </div>
+  <header class="app-header">
+    <h1 class="app-title" i18n="@@app.title">Mají Otevřeno?</h1>
+    <p class="app-subtitle">{{ todayDateString }}</p>
+  </header>
   
-  <div class="main-content">
-    <div class="status-indicator" [class.status-closed]="todayStatus.isHoliday">
-      {{ getStatusIcon() }}
-    </div>
-    
-    <div class="status-text" [class.status-closed-text]="todayStatus.isHoliday">
-      {{ getStatusText() }}
-    </div>
-    
-    <div class="date-info">
-      {{ getStatusDescription() }}
-    </div>
-    
-    <div class="holiday-info" *ngIf="todayStatus.isHoliday && todayStatus.holidayName">
-      <div class="holiday-name">{{ todayStatus.holidayName }}</div>
-    </div>
-    
-    <div class="shops-section">
-      <div class="shops-title" i18n="@@shops.status.title">Stav obchodů dnes:</div>
-      
-      <div class="shop-item" *ngFor="let shop of shopCategories">
-        <div class="shop-icon" [class.shop-open]="todayStatus.isHoliday ? shop.isOpenOnHolidays : true" 
-             [class.shop-closed]="todayStatus.isHoliday ? !shop.isOpenOnHolidays : false">
-          {{ todayStatus.isHoliday ? (shop.isOpenOnHolidays ? '✓' : '✕') : '✓' }}
-        </div>
-        <div class="shop-text">{{ shop.name }}</div>
+  <main class="main-content">
+    <section class="status-section">
+      <div class="status-indicator" [class.status-closed]="todayStatus.isHoliday">
+        {{ getStatusIcon() }}
       </div>
-    </div>
-  </div>
+      
+      <h2 class="status-text" [class.status-closed-text]="todayStatus.isHoliday">
+        {{ getStatusText() }}
+      </h2>
+      
+      <p class="date-info">
+        {{ getStatusDescription() }}
+      </p>
+      
+      <div class="holiday-info" *ngIf="todayStatus.isHoliday && todayStatus.holidayName">
+        <h3 class="holiday-name">{{ todayStatus.holidayName }}</h3>
+      </div>
+    </section>
+    
+    <section class="shops-section">
+      <h3 class="shops-title" i18n="@@shops.status.title">Stav obchodů dnes:</h3>
+      
+      <ul class="shop-list">
+        <li class="shop-item" *ngFor="let shop of shopCategories">
+          <span class="shop-icon" [class.shop-open]="todayStatus.isHoliday ? shop.isOpenOnHolidays : true" 
+               [class.shop-closed]="todayStatus.isHoliday ? !shop.isOpenOnHolidays : false">
+            {{ todayStatus.isHoliday ? (shop.isOpenOnHolidays ? '✓' : '✕') : '✓' }}
+          </span>
+          <span class="shop-text">{{ shop.name }}</span>
+        </li>
+      </ul>
+    </section>
+  </main>
 </div>
